@@ -1,11 +1,11 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-var prefix = "+";
-var adminprefix = '+'
+var prefix = "&";
+var adminprefix = '&'
 
 client.on("message", async message => {
         if(!message.channel.guild) return;
- var prefix= "+";
+ var prefix= "&";
         if(message.content.startsWith(prefix + 'server')) {
         let guild = message.guild
         let channel = message.channel
@@ -39,7 +39,7 @@ client.on("message", async message => {
     });
 
 client.on('message', function(message) {
-    if (message.content == "+clear") {
+    if (message.content == "&clear") {
         if (message.member.hasPermission("MANAGE_MESSAGES")) {
             message.channel.fetchMessages()
                .then(function(list){
@@ -51,7 +51,7 @@ client.on('message', function(message) {
 });
 	
   client.on('message', message => {
-    if (message.content.startsWith("+link")) {
+    if (message.content.startsWith("رابط")) {
 
   message.channel.createInvite({
         thing: true,
@@ -71,7 +71,7 @@ message.author.send(`**مدة الرابط : يـوم
 
 client.on('message', message => {
 
-    if (message.content === "+mc") {
+    if (message.content === "&mc") {
                         if(!message.channel.guild) return message.reply(' هذا الامر فقط للسيرفرات !!');
 
 if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' ليس لديك صلاحيات');
@@ -82,7 +82,7 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' لي
                message.reply("تم تقفيل الشات ? ")
            });
              }
-if (message.content === "+umc") {
+if (message.content === "&umc") {
     if(!message.channel.guild) return message.reply(' هذا الامر فقط للسيرفرات !!');
 
 if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('ليس لديك صلاحيات');
@@ -99,7 +99,7 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('لي�
 });
 
 client.on('message', message => {
-const prefix = "+";
+const prefix = "&";
   if (message.author.kick) return;
   if (!message.content.startsWith(prefix)) return;
 
@@ -280,7 +280,7 @@ if(!message.guild.member(client.user).hasPermission("MUTE_MEMBERS")) return mess
  
 });
 
-const developers = ["472413769700474901","id"]
+const developers = ["472413769700474901","516583452699656192"]
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!developers.includes(message.author.id)) return;
