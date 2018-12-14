@@ -3,31 +3,8 @@ const client = new Discord.Client();
 var prefix = "$"
 var adminprefix = '$'
 
-client.on('message', message => {
-    if (message.content.startsWith("الوان")) {
-                                    var mentionned = message.mentions.users.first();
-                var mentionavatar;
-                  if(mentionned){
-                      var mentionavatar = mentionned;
-                  } else {
-                      var mentionavatar = message.author;
-                      
-                  }
-                  let bot;
-                  if(message.author.bot) {
-                      bot = 'Bot'
-                  } else {
-                      bot = 'User'
-                  } 
-     var LastCode = new Discord.RichEmbed()
-     .setColor('RANDOM')
-     .setImage('https://cdn.discordapp.com/attachments/509828790944399365/523203407146778624/colors.png')
-      message.channel.sendEmbed(LastCode);
-     }
-   });
-
 client.on('message', message = {
-   if(message.content.split(' ')[0] == 'لون'){
+   if(message.content.split(' ')[0] == 'color'){
            const embedd = new Discord.RichEmbed()
      .setFooter('Requested by '+message.author.username, message.author.avatarURL)
    .setDescription(`لا يوجد لون بهذا الأسم  x `)
